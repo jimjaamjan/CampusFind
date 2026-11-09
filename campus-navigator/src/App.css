@@ -1,0 +1,613 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "Inter", Arial, sans-serif;
+  color: #172033;
+  background: #f4f7fb;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* HEADER */
+
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5eaf2;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-icon {
+  background: #e6efff;
+  color: #2563eb;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-icon.small {
+  width: 35px;
+  height: 35px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.brand p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #718096;
+}
+
+.campus-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ecfdf3;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  border-radius: 30px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-dot {
+  height: 8px;
+  width: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+
+/* SEARCH */
+
+.search-section {
+  max-width: 1100px;
+  margin: 28px auto 20px;
+  padding: 0 20px;
+}
+
+.search-box {
+  background: white;
+  border: 1px solid #dce4ef;
+  border-radius: 14px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #718096;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.02);
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 16px 0;
+  font-size: 15px;
+  color: #172033;
+}
+
+.clear-search {
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 25px;
+}
+
+/* TABS */
+
+.tabs {
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  padding: 0 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.tabs button {
+  border: 1px solid #dce4ef;
+  background: white;
+  color: #64748b;
+  border-radius: 11px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tabs button.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: white;
+}
+
+/* MAIN */
+
+.main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  font-size: 23px;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.section-heading p {
+  margin: 6px 0 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+/* GPS BUTTON */
+
+.gps-button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* MAP */
+
+.map-wrapper {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #dce4ef;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  margin-bottom: 22px;
+}
+
+.leaflet-container {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.custom-marker {
+  background: transparent;
+  border: none;
+}
+
+.building-marker,
+.user-marker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #2563eb;
+  font-size: 18px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-marker {
+  border-color: #16a34a;
+}
+
+.location-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #15803d;
+  background: #ecfdf3;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.destination-card {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.destination-card h3 {
+  margin: 7px 0;
+}
+
+.destination-card p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.destination-card button {
+  align-self: flex-start;
+  border: none;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 9px 13px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #2563eb;
+}
+
+.building-heading {
+  margin-top: 28px;
+}
+
+/* BUILDINGS */
+
+.building-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.building-card {
+  background: white;
+  border: 1px solid #e5eaf2;
+  border-radius: 15px;
+  padding: 17px;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.building-card-icon {
+  background: #eaf1ff;
+  color: #2563eb;
+  border-radius: 11px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.building-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.building-info h3 {
+  font-size: 15px;
+  margin: 0 0 7px;
+}
+
+.building-info p {
+  font-size: 13px;
+  color: #718096;
+  margin: 8px 0 0;
+}
+
+.category-label {
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.destination-button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* AMENITIES */
+
+.amenity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.amenity-card {
+  background: white;
+  border: 1px solid #e5eaf2;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.amenity-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  background: #eaf1ff;
+  color: #2563eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.amenity-card h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.amenity-card p {
+  color: #718096;
+  font-size: 13px;
+}
+
+/* FOOD */
+
+.food-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.food-card {
+  background: white;
+  border: 1px solid #e5eaf2;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.food-card-header {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+}
+
+.food-icon {
+  width: 45px;
+  height: 45px;
+  background: #fff7ed;
+  color: #ea580c;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.food-card h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+}
+
+.food-card p {
+  font-size: 13px;
+  color: #718096;
+}
+
+.open-status {
+  color: #15803d;
+  background: #ecfdf3;
+  border-radius: 6px;
+  padding: 4px 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.closed-status {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-radius: 6px;
+  padding: 4px 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.menu-button {
+  margin-top: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 11px 15px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* MENU */
+
+.menu-panel {
+  margin-top: 24px;
+  background: white;
+  border: 1px solid #e5eaf2;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.close-menu {
+  background: #f1f5f9;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 22px;
+  color: #64748b;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e5eaf2;
+}
+
+.menu-item h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.menu-item strong {
+  color: #172033;
+  font-size: 16px;
+}
+
+/* EMPTY */
+
+.empty-state {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  color: #718096;
+  grid-column: 1 / -1;
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 25px;
+  border-top: 1px solid #e5eaf2;
+  background: white;
+  color: #718096;
+  font-size: 13px;
+}
+
+/* LOADING */
+
+.loading-screen,
+.error-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+  color: #2563eb;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 700px) {
+  .header {
+    padding: 16px;
+    flex-wrap: wrap;
+  }
+
+  .brand h1 {
+    font-size: 20px;
+  }
+
+  .campus-badge {
+    display: none;
+  }
+
+  .building-list,
+  .food-list {
+    grid-template-columns: 1fr;
+  }
+
+  .amenity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-heading h2 {
+    font-size: 20px;
+  }
+
+  .gps-button {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .map-wrapper .leaflet-container {
+    height: 360px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .tabs button {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .amenity-grid {
+    grid-template-columns: 1fr;
+  }
+}
